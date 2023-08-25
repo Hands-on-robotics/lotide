@@ -1,16 +1,18 @@
 
 /**
- *  head gives the first element of an array.
- * @param {array} singleArray Is the array given.
- * @returns {element} The first element of singleArray.
+ * tail Removes the first element in an array.
+ * @param {array} array Is required.
+ * @returns {array -1} The array without the first element.
  */
-const head = function(singleArray) {
-  return singleArray[0];
+const tail = function(array) {
+  return array.slice(1);
 };
 
+console.log(tail([1, 2, 3, 4, 5, 6]));
+console.log(tail(["This ", "is ", "great ", "timing."]));
 
 /**
- * assertEqual checks for the strict equality of two variables and gives a flashy Passed: or Failed: output.
+ * assertEqual Checks for the strict equality of two variables and gives a flashy Passed: or Failed: output.
  * @param {variable} actual Is compared with expected.
  * @param {variable} expected Is compared with actual.
  * @returns {string} Notifies of pass or fail.
