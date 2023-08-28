@@ -1,3 +1,4 @@
+
 /**
  * assertEqual Checks for the strict equality of two variables and console logs a flashy Passed: or Failed: output.
  * @param {variable} actual Is compared with expected.
@@ -20,4 +21,24 @@ const assertEqual = function(actual, expected) {
     console.log(`${crossMarkEmojiTimes3} Assertion Failed: ${actual} !== ${expected}`);
     return false;
   }
+};
+
+/**
+ * eqArrays checks if two arrays are identical and returns a true or false.
+ * @param {array} firstArray Is compared with secondArray.
+ * @param {array} secondArray Is compared with firstArray.
+ * @returns {boolean} true or false comparison.
+ */
+const eqArrays = function(firstArray, secondArray) {
+  // Return false if both arrays are different lengths.
+  if (firstArray.length !== secondArray.length) {
+    return false;
+  }
+  // Return false and exit if any elements do not strictly match.
+  for (const element of firstArray) {
+    if (firstArray[element] !== secondArray[element]) {
+      return false;
+    }
+  }
+  return true;
 };
