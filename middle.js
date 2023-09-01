@@ -36,8 +36,8 @@ const eqArrays = function(firstArray, secondArray) {
     return false;
   }
   // Return false and exit if any elements do not strictly match.
-  for (const element of firstArray) {
-    if (firstArray[element] !== secondArray[element]) {
+  for (const i in firstArray) {
+    if (firstArray[i] !== secondArray[i]) {
       return false;
     }
   }

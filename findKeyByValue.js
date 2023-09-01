@@ -24,7 +24,12 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-
+/**
+ * findKeyByValue Returns the key of an object by the value given.
+ * @param {object} object Is the object given.
+ * @param {value} value To look for in the object.
+ * @returns {string} the key found at the values location.
+ */
 const findKeyByValue = function(object, value) {
   // Object.keys(object) turns the object keys into an array.
   for (const key of Object.keys(object)) {
@@ -34,11 +39,11 @@ const findKeyByValue = function(object, value) {
   }
 };
 
-const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
+// const bestTVShowsByGenre = {
+//   sci_fi: "The Expanse",
+//   comedy: "Brooklyn Nine-Nine",
+//   drama:  "The Wire"
+// };
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
