@@ -76,3 +76,41 @@ const eqObjects = function(object1, object2) {
   }
   return true;
 };
+
+/**
+ * assertObjectsEqual checks that two objects have equal key names, values and length. Then returns a true or false with a console log.
+ * @param {object} actual To be compared.
+ * @param {object} expected To be compared.
+ * @returns {boolean} As a statement of their equality and console logs the result with a flashy message.
+ */
+const assertObjectsEqual = function(actual, expected) {
+  
+  const inspect = require('util').inspect;
+
+  const threeCheckMark = "✅✅✅";
+  const threeCrossEmoji = "❌❌❌";
+
+  if (!eqObjects(actual, expected)) {
+    console.log(`${threeCrossEmoji} Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+
+    return false;
+  }
+
+  console.log(`${threeCheckMark} Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+
+  return true;
+};
+
+// const shirtObject = { color: "red", size: "medium" };
+// const anotherShirtObject = { size: "medium", color: "red" };
+// console.log("same shirts, keys in different places: ", assertEqual(eqObjects(shirtObject , anotherShirtObject), true)); // => true
+
+// const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
+// console.log("shirt and longSleeve: ",assertEqual(eqObjects(shirtObject , longSleeveShirtObject), false)); // => false
+
+const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+console.log(assertObjectsEqual(multiColorShirtObject, anotherMultiColorShirtObject)); // => true
+
+const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
+console.log(assertObjectsEqual(multiColorShirtObject, longSleeveMultiColorShirtObject)); // => false
