@@ -19,21 +19,64 @@ const eqArrays = require('./eqArrays');
 const eqObjects = require('./eqObjects');
 
 module.exports = {
-  head:   head,
-  tail:   tail,
-  middle: middle,
-  flatten: flatten,
-  map:  map,
-  letterPositions:  letterPositions,
-  without:  without,
-  takeUntil:  takeUntil,
-  countOnly:  countOnly,
-  countLetters:  countLetters,
-  findKey:  findKey,
-  findKeyByValue:  findKeyByValue,
-  assertEqual:  assertEqual,
-  assertArraysEqual:  assertArraysEqual,
-  assertObjectsEqual:  assertObjectsEqual,
-  eqArrays:  eqArrays,
-  eqObjects:  eqObjects
+  head,
+  tail,
+  middle,
+  flatten,
+  map,
+  letterPositions,
+  without,
+  takeUntil,
+  countOnly,
+  countLetters,
+  findKey,
+  findKeyByValue,
+  assertEqual,
+  assertArraysEqual,
+  assertObjectsEqual,
+  eqArrays,
+  eqObjects
 };
+
+// the empty objects still need to be exported
+// head: [Function: head],
+// tail: [Function: tail],
+// middle: [Function: middle],
+// flatten: {},
+// map: {},
+// letterPositions: {},
+// without: {},
+// takeUntil: {},
+// countOnly: {},
+// countLetters: {},
+// findKey: {},
+// findKeyByValue: {},
+// assertEqual: [Function: assertEqual],
+// assertArraysEqual: [Function: assertArraysEqual],
+// assertObjectsEqual: {},
+// eqArrays: [Function: eqArrays],
+// eqObjects: {}
+
+// These console.log tests of the functions still need to be addressed.
+
+// 1
+// 2
+// 5
+// 7
+// 2
+// -1
+// [ 1, 2, 5, 7, 2 ]
+
+// ---
+// I've
+// been
+// to
+// Hollywood
+// ,
+// [ "I've", 'been', 'to', 'Hollywood' ]
+// noma
+
+// ✅✅✅ Assertion Passed: { colors: [ 'red', 'blue' ], size: 'medium' } === { size: 'medium', colors: [ 'red', 'blue' ] }
+// true
+// ❌❌❌ Assertion Failed: { colors: [ 'red', 'blue' ], size: 'medium' } !== { size: 'medium', colors: [ 'red', 'blue' ], sleeveLength: 'long' }
+// false
