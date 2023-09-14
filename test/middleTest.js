@@ -1,9 +1,21 @@
 // middleTest.js
 
-const middle = require('../middle');
 const assertArraysEqual = require('../assertArraysEqual');
+const middle = require('../middle');
+//const assertArraysEqual = require('../assertArraysEqual');
+const assert = require('chai').assert;
 
-console.log("This should be [2, 3]:", assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]));
-console.log("This should be [2]:", assertArraysEqual(middle([1, 2, 3]), [2]));
-console.log("There should be no middle:", assertArraysEqual(middle([1, 2]), []));
-console.log("There should be no middle:", assertArraysEqual(middle([1]), []));
+describe("#middle", () => {
+  it("Should return [2, 3] for [1, 2, 3, 4]", () => {
+    assert.strictEqual(assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]), true);
+  });
+  it("Should return [2] for [1, 2, 3]", () => {
+    assert.strictEqual(assertArraysEqual(middle([1, 2, 3]), [2]), true);
+  });
+  it("Should return an empty array for [1, 2]", () => {
+    assert.strictEqual(assertArraysEqual(middle([1, 2]), []), true);
+  });
+  it("Should return an empty array for [1]", () => {
+    assert.strictEqual(assertArraysEqual(middle([1]), []), true);
+  });
+});

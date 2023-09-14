@@ -2,7 +2,13 @@
 // tailTest.js
 
 const tail = require('../tail');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
-console.log("This should Pass", assertEqual(tail("best"), "est"));
-console.log("This should Fail", assertEqual(tail("best"), "best"));
+describe("#tail", () => {
+  it("Should return est for best", () => {
+    assert.strictEqual(tail("best"), "est");
+  });
+  it("Should return 't' for 'st'", () => {
+    assert.strictEqual(tail("st"), "t");
+  });
+});
