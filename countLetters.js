@@ -1,21 +1,27 @@
 /**
- * countLetters Returns an object with the key values of the letters and the amount of times they occur in a given string.
- * @param {string} string Taken used for counting.
- * @returns {object} Returns an object containing letters as keys and the letter's counter for it's value.
+ *This function should take in a sentence (as a string) and then return a count of each of the letters in that sentence.
+ *This function should take in a sentence (as a string) and then return a count of each of the letters in that sentence while excluding spaces.
+ * @param {array} string takes in a string to count
+ * @returns {object} returns an object containing letter counts
  */
 const countLetters = function (string) {
+
+  // Create object
   const letterCounts = {};
 
   for (const char of string) {
+    // If char is not a space
     if (char !== " ") {
-      if (letterCounts[char]) {
-        letterCounts[char]++;
+      // If char is not in Object
+      if (!letterCounts[char]) {
+        // Add char as a key with a value of one
+        letterCounts[char] = 1;
       } else {
-        letterCounts[char] = 0;
+        // else the key is already there and we add one to the key's value
+        letterCounts[char]++;
       }
     }
   }
-
   return letterCounts;
 };
 
