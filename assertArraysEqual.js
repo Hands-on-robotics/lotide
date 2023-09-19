@@ -2,10 +2,10 @@
 const eqArrays = require('./eqArrays');
 
 /**
- * assertArraysEqual Checks for the strict equality across two arrays and gives a flashy Passed: or Failed: output.
- * @param {array} actual Is compared with expected.
- * @param {array} expected Is compared with actual.
- * @returns {boolean} Pass or fail.
+ * assertArraysEqual Checks for the strict equality of elements and length between two arrays and gives a flashy Passed: or Failed: output.
+ * @param {array} actual To compare.
+ * @param {array} expected To compare.
+ * @returns {boolean} Truth of strict equality between arrays elements and length.
  */
 const assertArraysEqual = function(actual, expected) {
 

@@ -1,37 +1,10 @@
-const eqArrays = function(arrayOne, arrayTwo) {
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    } else {
-      continue;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  const checkMarkEmojiTimes3 = "✅ ✅ ✅";
-  const crossMarkEmojiTimes3 = "❌ ❌ ❌";
-  
-  if (eqArrays(actual, expected) === true) {
-
-    console.log(`${checkMarkEmojiTimes3} Assertion Passed: ${actual} === ${expected}`);
-    return true;
-  } else {
-
-    console.log(`${crossMarkEmojiTimes3} Assertion Failed: ${actual} !== ${expected}`);
-    return false;
-  }
-};
 
 /**
- * This code was refactored and reviewed by @TheOriginalArab, @Hands-on-robotics, & @ekatie.
- * This function takes in an array and a callback function and outputs a new array created with the callback function.
- * @param {array} array - Input array.
- * @param {callback function} callback - Callback function to apply to array.
- * @returns {array} results - The pushed results of the callback function.
+ * map Uses a callback on an array to find truthy values and add them to the output array.
+ * @param {array} array To use callback upon.
+ * @param {callback} callback To add values to output array.
+ * @returns {array} The truthy elements found by callback.
  */
-
 const map = function(array, callback) {
   const results = [];
   for (const element of array) {
@@ -40,17 +13,4 @@ const map = function(array, callback) {
   return results;
 };
 
-// //Test case 1: Map to first letter
-// const words = ["ground", "control", "to", "major", "tom", "dragons"];
-// const results1 = map(words, word => word[0]);
-// assertArraysEqual(results1, ["g", "c", "t", "m", "t", "d"]);
-
-// //Test case 2: Map to lengths
-// const numbers = [1, 22, 333, 4444, 55555];
-// const lengths = map(numbers, num => num.toString().length);
-// assertArraysEqual(lengths, [1, 2, 3, 4, 5]);
-
-// //Test case 3: Map to capitalize
-// const lowercaseWords = ["hello", "my", "dragon", "friend"];
-// const capitalize = map(lowercaseWords, (word) => word.toUpperCase());
-// assertArraysEqual(capitalize, ["HELLO", "MY", "DRAGON", "FRIEND"]);
+module.exports = map;

@@ -20,3 +20,5 @@ const flatten = function(twoDimensionalArray) {
   }
   return oneDimensionalArray;
 };
+
+module.exports = flatten;

@@ -1,5 +1,10 @@
-const { log } = require("console");
 
+/**
+ * takeUntil returns array of copied elements up until the point that the callback truthy statement is reached.
+ * @param {array} array For callback to access.
+ * @param {callback} callback Finds the index at which to stop adding to the copied array.
+ * @returns {array} Copied values before the truthy value of the callback was met.
+ */
 const takeUntil = function(array, callback) {
   const takeUntilArray = [];
 
@@ -16,12 +21,4 @@ const takeUntil = function(array, callback) {
   return takeUntilArray;
 };
 
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
-console.log(results1);
-
-console.log('---');
-
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ',');
-console.log(results2);
+module.exports = takeUntil;
