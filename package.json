@@ -1,8 +1,8 @@
 {
   "name": "@hands-on-coding/lotide",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A learning project with lighthouse labs. A mini clone of Lodash",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
